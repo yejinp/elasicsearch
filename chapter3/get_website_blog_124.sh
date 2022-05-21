@@ -6,4 +6,4 @@ source ${home}/es.env
 [ -z ${ES_PORT} ]  && ES_PORT="9200"
 
 url="${ES_HOST}:${ES_PORT}/website/blog/124?pretty"
-curl -H "Content-Type: application/json" -XGET ${url}
+curl  -i -H "Content-Type: application/json" -XGET ${url}
