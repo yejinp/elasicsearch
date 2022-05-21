@@ -1,3 +1,5 @@
 notes of chapter 3
 
 1. use params when update with script
+2. "Rejecting mapping update to [website] as the final mapping would have more than 1 type: [pageviews, blog]"
+
