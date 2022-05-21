@@ -1,4 +1,4 @@
-#/bin/bash
+#!bin/bash
 
 home=$(dirname $0)
 source ${home}/es.env
