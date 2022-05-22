@@ -11,8 +11,20 @@ header="Content-Type: application/json"
 curl -H "${header}" -XGET ${url}  -d '
 {
 	"query":{
-		"match":{
-			"tweet": "elasticsearch"
+		"bool":{
+			"must":
+				{"term": {"email": "business opportunity"}}
+				,
+			"should": [
+				{"term": {"starred": true}
+				},
+				{"bool": {
+					"must": {"term":{"folder":"inbox"}},
+					"must_not":{"term":{"spam":true}}
+					}
+				}
+			],
+			"minimum_should_match":1
 		}
 	}
 }
