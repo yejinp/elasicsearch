@@ -1,0 +1,37 @@
+{
+  "tweet" : {
+    "mappings" : {
+      "doc" : {
+        "properties" : {
+          "date" : {
+            "type" : "date"
+          },
+          "name" : {
+            "type" : "text",
+            "fields" : {
+              "keyword" : {
+                "type" : "keyword",
+                "ignore_above" : 256
+              }
+            }
+          },
+          "tweet" : {
+            "type" : "text",
+            "fields" : {
+              "keyword" : {
+                "type" : "keyword",
+                "ignore_above" : 256
+              }
+            }
+          },
+          "user_id" : {
+            "type" : "long"
+          },
+	  "_all": {
+        	"enabled": true
+      	  }
+        }
+      }
+    }
+  }
+}

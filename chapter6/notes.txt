@@ -1,0 +1,4 @@
+notes for chapter 6
+
+1. _all field is disabled by default in ES 6.0.0
+
