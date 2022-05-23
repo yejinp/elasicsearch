@@ -1,0 +1,4 @@
+notes for chapter 7
+
+1. no [query] registered for [filtered]
+
