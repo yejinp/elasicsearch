@@ -6,6 +6,6 @@ source ${home}/es.env
 [ -z ${ES_PORT} ]  && ES_PORT="9200"
 
 header="Content-Type: application/json"
-url="${ES_HOST}:${ES_PORT}/_cluster/health?level=indices&pretty"
+url="${ES_HOST}:${ES_PORT}/_cluster/health?level=indices?pretty"
 
-curl -H "${header}"  -XGET ${url}  
+curl -H "${header}" -s -XGET ${url}  
