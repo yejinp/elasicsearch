@@ -1,3 +1,12 @@
 notes for chapter 15
 
-1.  "[match] query does not support [type]" in ES 6.0.0;
+1.  "[match] query does not support [type]" in ES 6.0.0
+
+2. What Is a Phrase
+  For a document to be considered a match for the phrase “quick brown fox,” the following must be true:
+• quick, brown, and fox must all appear in the field.
+• The position of brown must be 1 greater than the position of quick.
+• The position of fox must be 2 greater than the position of quick.
+If any of these conditions is not met, the document is not considered a match.
+
+3. Renamed position_offset_gap to position_increment_gap in ES 6.0..0
