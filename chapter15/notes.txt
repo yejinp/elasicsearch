@@ -1,0 +1,3 @@
+notes for chapter 15
+
+1.  "[match] query does not support [type]" in ES 6.0.0;
