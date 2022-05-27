@@ -1,6 +1,16 @@
-curl -H "Content-Type: application/json" -XPUT 'localhost:9020/my_index/my_type/2?pretty'  -d '
+#!bin/bash
+
+home=$(dirname $0)
+source ${home}/es.env
+[ -z ${ES_HOST} ]  && ES_HOST="localhost"
+[ -z ${ES_PORT} ]  && ES_PORT="9200"
+
+url="${ES_HOST}:${ES_PORT}/my_index/my_type/1?pretty"
+header="Content-Type: application/json"
+
+curl -H "${header}" -XPUT ${url} -d '
 {
-	"title": "This throws a StrictDynamicMappingException",
-	"new_field": "Fail!"
+	"title": "This doc adds a new field",
+	"new_field": "Fail!" 
 }
 '
