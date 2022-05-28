@@ -15,6 +15,9 @@ curl -H "${header}" -XPUT ${url} -d '
 	"properties": {
 	"color": {
 	"type": "keyword"
+},
+	"make": {
+	"type": "keyword"
 }
 }
 }
