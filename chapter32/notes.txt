@@ -1,0 +1,4 @@
+notes for chapter 32
+
+1. murmur3 need to be install, the install command is:
+    bin/elasticsearch-plugin install mapper-murmur3
