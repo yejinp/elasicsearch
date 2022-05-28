@@ -1,0 +1,4 @@
+notes for chapter 26
+
+1. "No search type for [count]" in ES 6.0.0
+2. Fielddata is disabled on text fields by default. 
