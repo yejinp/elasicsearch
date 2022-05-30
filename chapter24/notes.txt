@@ -1,0 +1,2 @@
+notes for chapter 24
+1. The phonetic token filter is provided as the analysis-phonetic plugin.
