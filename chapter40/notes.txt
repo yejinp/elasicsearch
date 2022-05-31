@@ -1,0 +1,4 @@
+notes for chapter 40
+
+1. in ES 6.0.0, it seems unsupport lock.
+
