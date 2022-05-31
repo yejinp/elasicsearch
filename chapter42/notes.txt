@@ -1,3 +1,4 @@
 notes for chapter 42
-
 1. the parent document and all of its children must live on the same shard.
+2. the parent-child relation changed a lot in ES 6.0.0, which use relations (join);
+
