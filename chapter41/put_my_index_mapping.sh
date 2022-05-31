@@ -9,19 +9,29 @@ url="${ES_HOST}:${ES_PORT}/my_index?pretty"
 header="Content-Type: application/json"
 
 curl -H "${header}" -XPUT ${url} -d '
-{ 
+{
 	"mappings": {
 		"blogpost": {
 			"properties": {
 				"comments": {
 					"type": "nested",
-						"properties": {
-							"name": { "type": "keyword" },
-							"comment": { "type": "keyword" },
-							"age": { "type": "short" },
-							"stars": { "type": "short" },
-							"date": { "type": "date" }
+					"properties": {
+						"name": {
+							"type": "text"
+						},
+						"comment": {
+							"type": "text"
+						},
+						"age": {
+							"type": "short"
+						},
+						"stars": {
+							"type": "short"
+						},
+						"date": {
+							"type": "date"
 						}
+					}
 				}
 			}
 		}
