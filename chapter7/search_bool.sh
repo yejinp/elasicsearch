@@ -12,8 +12,8 @@ curl -H "${header}" -XGET ${url}  -d '
 {
 	"query":{
 		"bool":{
-			"must": {"tweet": "elasticsearch"},
-			"must_not": {"name": "mary"},
+			"must": { "match":{"tweet": "elasticsearch"}},
+			"must_not": {"match":{ "name": "mary"}},
 			"should": {"match": {"tweet": "full text"}}
 		}
 	}
