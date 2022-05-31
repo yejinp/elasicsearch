@@ -1,0 +1,11 @@
+notes for Elasticsearch
+
+
+
+1. following chapters should be focused: 
+   part I, part II,  part IV, part VI and part VII;
+2. In ES 6.0.0 only one type can be in one index;
+
+3. 
+
+
