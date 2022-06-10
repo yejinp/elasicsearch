@@ -20,6 +20,6 @@ Frequently used filters will be cached automatically by Elasticsearch, to speed 
 Filter context is in effect whenever a query clause is passed to a filter parameter, such as the filter or must_not parameters in the bool query, the filter parameter in the constant_score query, or the filter aggregation.
 
 
-query与filter的区别参考： https://www.elastic.co/guide/en/elasticsearch/reference/6.0/query-filter-context.html
+example between query and filter please refer to: https://www.elastic.co/guide/en/elasticsearch/reference/6.0/query-filter-context.html
 
 
