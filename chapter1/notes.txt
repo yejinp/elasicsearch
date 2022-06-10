@@ -2,3 +2,24 @@ notes of chapter 1
 
 1. Fielddata is disabled on text fields by default. Set fielddata=true on [interests] in order to load fielddata in memory by uninverting the inverted index. Note that this can however use significant memory. Alternatively use a keyword field instead.
 2. Some users may be accustomed to shutting down Elasticsearch using the _shutdown API. This API has been removed from Elasticsearch version 2.x and up.
+3. Query and filter context :
+   The behaviour of a query clause depends on whether it is used in query context or in filter context:
+
+Query context
+A query clause used in query context answers the question “How well does this document match this query clause?” Besides deciding whether or not the document matches, the query clause also calculates a _score representing how well the document matches, relative to other documents.
+
+Query context is in effect whenever a query clause is passed to a query parameter, such as the query parameter in the search API.
+
+Filter context
+In filter context, a query clause answers the question “Does this document match this query clause?” The answer is a simple Yes or No — no scores are calculated. Filter context is mostly used for filtering structured data, e.g.
+
+Does this timestamp fall into the range 2015 to 2016?
+Is the status field set to "published"?
+Frequently used filters will be cached automatically by Elasticsearch, to speed up performance.
+
+Filter context is in effect whenever a query clause is passed to a filter parameter, such as the filter or must_not parameters in the bool query, the filter parameter in the constant_score query, or the filter aggregation.
+
+
+query与filter的区别参考： https://www.elastic.co/guide/en/elasticsearch/reference/6.0/query-filter-context.html
+
+
