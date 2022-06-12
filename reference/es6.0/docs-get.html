@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+<meta charset="UTF-8">
+<title>Get API | Elasticsearch Reference [6.0] | Elastic</title>
+<link rel="home" href="index.html" title="Elasticsearch Reference [6.0]"/>
+<link rel="up" href="docs.html" title="Document APIs"/>
+<link rel="prev" href="docs-index_.html" title="Index API"/>
+<link rel="next" href="docs-delete.html" title="Delete API"/>
+<meta name="DC.type" content="Learn/Docs/Elasticsearch/Reference/6.0"/>
+<meta name="DC.subject" content="Elasticsearch"/>
+<meta name="DC.identifier" content="6.0"/>
+<meta name="robots" content="noindex,nofollow"/>
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.optimizely.com/js/18132920325.js"></script>
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="apple-mobile-web-app-title" content="Elastic">
+    <meta name="application-name" content="Elastic">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="naver-site-verification" content="936882c1853b701b3cef3721758d80535413dbfd" />
+    <meta name="yandex-verification" content="d8a47e95d0972434" />
+    <meta name="localized" content="true" />
+    <meta name="st:robots" content="follow,index" />
+    <meta property="og:image" content="https://www.elastic.co/static/images/elastic-logo-200.png" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon-precomposed" sizes="64x64" href="/favicon_64x64_16bit.png">
+    <link rel="apple-touch-icon-precomposed" sizes="32x32" href="/favicon_32x32.png">
+    <link rel="apple-touch-icon-precomposed" sizes="16x16" href="/favicon_16x16.png">
+    <!-- Give IE8 a fighting chance -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="/guide/static/styles.css" />
+  </head>
+
+  <!--© 2015-2022 Elasticsearch B.V. -->
+  <!-- All Elastic documentation is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License. -->
+  <!-- http://creativecommons.org/licenses/by-nc-nd/4.0/ -->
+  
+  <body>
+    <!-- Google Tag Manager -->
+    <script>dataLayer = [];</script><noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-58RLH5" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-58RLH5');</script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-12395217-16"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-12395217-16');
+    </script>
+
+    <!--BEGIN QUALTRICS WEBSITE FEEDBACK SNIPPET-->
+    <script type='text/javascript'>
+      (function(){var g=function(e,h,f,g){
+      this.get=function(a){for(var a=a+"=",c=document.cookie.split(";"),b=0,e=c.length;b<e;b++){for(var d=c[b];" "==d.charAt(0);)d=d.substring(1,d.length);if(0==d.indexOf(a))return d.substring(a.length,d.length)}return null};
+      this.set=function(a,c){var b="",b=new Date;b.setTime(b.getTime()+6048E5);b="; expires="+b.toGMTString();document.cookie=a+"="+c+b+"; path=/; "};
+      this.check=function(){var a=this.get(f);if(a)a=a.split(":");else if(100!=e)"v"==h&&(e=Math.random()>=e/100?0:100),a=[h,e,0],this.set(f,a.join(":"));else return!0;var c=a[1];if(100==c)return!0;switch(a[0]){case "v":return!1;case "r":return c=a[2]%Math.floor(100/c),a[2]++,this.set(f,a.join(":")),!c}return!0};
+      this.go=function(){if(this.check()){var a=document.createElement("script");a.type="text/javascript";a.src=g;document.body&&document.body.appendChild(a)}};
+      this.start=function(){var a=this;window.addEventListener?window.addEventListener("load",function(){a.go()},!1):window.attachEvent&&window.attachEvent("onload",function(){a.go()})}};
+      try{(new g(100,"r","QSI_S_ZN_emkP0oSe9Qrn7kF","https://znemkp0ose9qrn7kf-elastic.siteintercept.qualtrics.com/WRSiteInterceptEngine/?Q_ZID=ZN_emkP0oSe9Qrn7kF")).start()}catch(i){}})();
+    </script><div id='ZN_emkP0oSe9Qrn7kF'><!--DO NOT REMOVE-CONTENTS PLACED HERE--></div>
+    <!--END WEBSITE FEEDBACK SNIPPET-->
+
+    <div id='elastic-nav' style="display:none;"></div>
+    <script src='https://www.elastic.co/elastic-nav.js'></script>
+
+    <!-- Subnav -->
+    <div>
+      <div>
+        <div class="tertiary-nav d-none d-md-block">
+          <div class="container">
+            <div class="p-t-b-15 d-flex justify-content-between nav-container">
+              <div class="breadcrum-wrapper"><span><a href="/guide/" style="font-size: 14px; font-weight: 600; color: #000;">Docs</a></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="main-container">
+      <section id="content" >
+        <div class="content-wrapper">
+
+          <section id="guide" lang="en">
+            <div class="container">
+              <div class="row">
+                <div class="col-xs-12 col-sm-8 col-md-8 guide-section">
+                  <!-- start body -->
+                  <div class="page_header">
+<p>
+  <strong>WARNING</strong>: Version 6.0 of Elasticsearch has passed its 
+  <a href="https://www.elastic.co/support/eol">EOL date</a>. 
+</p>  
+<p>
+  This documentation is no longer being maintained and may be removed. 
+  If you are running this version, we strongly advise you to upgrade. 
+  For the latest information, see the 
+  <a href="../current/index.html">current release documentation</a>. 
+</p>
+</div>
+<div id="content">
+<div class="breadcrumbs">
+<span class="breadcrumb-link"><a href="index.html">Elasticsearch Reference [6.0]</a></span>
+»
+<span class="breadcrumb-link"><a href="docs.html">Document APIs</a></span>
+»
+<span class="breadcrumb-node">Get API</span>
+</div>
+<div class="navheader">
+<span class="prev">
+<a href="docs-index_.html">« Index API</a>
+</span>
+<span class="next">
+<a href="docs-delete.html">Delete API »</a>
+</span>
+</div>
+<div class="chapter">
+<div class="titlepage"><div><div>
+<h2 class="title"><a id="docs-get"></a>Get API<a class="edit_me edit_me_private" rel="nofollow" title="Editing on GitHub is available to Elastic" href="https://github.com/elastic/elasticsearch/edit/6.0/docs/reference/docs/get.asciidoc">edit</a></h2>
+</div></div></div>
+<p>The get API allows to get a typed JSON document from the index based on
+its id. The following example gets a JSON document from an index called
+twitter, under a type called tweet, with id valued 0:</p>
+<div class="pre_wrapper lang-console">
+<pre class="programlisting prettyprint lang-console">GET twitter/tweet/0</pre>
+</div>
+<div class="console_widget" data-snippet="snippets/83.console"></div>
+<p>The result of the above get operation is:</p>
+<div class="pre_wrapper lang-js">
+<pre class="programlisting prettyprint lang-js">{
+    "_index" : "twitter",
+    "_type" : "tweet",
+    "_id" : "0",
+    "_version" : 1,
+    "found": true,
+    "_source" : {
+        "user" : "kimchy",
+        "date" : "2009-11-15T14:12:12",
+        "likes": 0,
+        "message" : "trying out Elasticsearch"
+    }
+}</pre>
+</div>
+<p>The above result includes the <code class="literal">_index</code>, <code class="literal">_type</code>, <code class="literal">_id</code> and <code class="literal">_version</code>
+of the document we wish to retrieve, including the actual <code class="literal">_source</code>
+of the document if it could be found (as indicated by the <code class="literal">found</code>
+field in the response).</p>
+<p>The API also allows to check for the existence of a document using
+<code class="literal">HEAD</code>, for example:</p>
+<div class="pre_wrapper lang-console">
+<pre class="programlisting prettyprint lang-console">HEAD twitter/tweet/0</pre>
+</div>
+<div class="console_widget" data-snippet="snippets/84.console"></div>
+<h3><a id="realtime"></a>Realtime<a class="edit_me edit_me_private" rel="nofollow" title="Editing on GitHub is available to Elastic" href="https://github.com/elastic/elasticsearch/edit/6.0/docs/reference/docs/get.asciidoc">edit</a></h3>
+<p>By default, the get API is realtime, and is not affected by the refresh
+rate of the index (when data will become visible for search). If a document
+has been updated but is not yet refreshed, the get API will issue a refresh
+call in-place to make the document visible. This will also make other documents
+changed since the last refresh visible. In order to disable realtime GET,
+one can set the <code class="literal">realtime</code> parameter to <code class="literal">false</code>.</p>
+<h3><a id="get-source-filtering"></a>Source filtering<a class="edit_me edit_me_private" rel="nofollow" title="Editing on GitHub is available to Elastic" href="https://github.com/elastic/elasticsearch/edit/6.0/docs/reference/docs/get.asciidoc">edit</a></h3>
+<p>By default, the get operation returns the contents of the <code class="literal">_source</code> field unless
+you have used the <code class="literal">stored_fields</code> parameter or if the <code class="literal">_source</code> field is disabled.
+You can turn off <code class="literal">_source</code> retrieval by using the <code class="literal">_source</code> parameter:</p>
+<div class="pre_wrapper lang-console">
+<pre class="programlisting prettyprint lang-console">GET twitter/tweet/0?_source=false</pre>
+</div>
+<div class="console_widget" data-snippet="snippets/85.console"></div>
+<p>If you only need one or two fields from the complete <code class="literal">_source</code>, you can use the <code class="literal">_source_include</code>
+&amp; <code class="literal">_source_exclude</code> parameters to include or filter out that parts you need. This can be especially helpful
+with large documents where partial retrieval can save on network overhead. Both parameters take a comma separated list
+of fields or wildcard expressions. Example:</p>
+<div class="pre_wrapper lang-console">
+<pre class="programlisting prettyprint lang-console">GET twitter/tweet/0?_source_include=*.id&amp;_source_exclude=entities</pre>
+</div>
+<div class="console_widget" data-snippet="snippets/86.console"></div>
+<p>If you only want to specify includes, you can use a shorter notation:</p>
+<div class="pre_wrapper lang-console">
+<pre class="programlisting prettyprint lang-console">GET twitter/tweet/0?_source=*.id,retweeted</pre>
+</div>
+<div class="console_widget" data-snippet="snippets/87.console"></div>
+<h3><a id="get-stored-fields"></a>Stored Fields<a class="edit_me edit_me_private" rel="nofollow" title="Editing on GitHub is available to Elastic" href="https://github.com/elastic/elasticsearch/edit/6.0/docs/reference/docs/get.asciidoc">edit</a></h3>
+<p>The get operation allows specifying a set of stored fields that will be
+returned by passing the <code class="literal">stored_fields</code> parameter.
+If the requested fields are not stored, they will be ignored.
+Consider for instance the following mapping:</p>
+<div class="pre_wrapper lang-console">
+<pre class="programlisting prettyprint lang-console">PUT twitter
+{
+   "mappings": {
+      "tweet": {
+         "properties": {
+            "counter": {
+               "type": "integer",
+               "store": false
+            },
+            "tags": {
+               "type": "keyword",
+               "store": true
+            }
+         }
+      }
+   }
+}</pre>
+</div>
+<div class="console_widget" data-snippet="snippets/88.console"></div>
+<p>Now we can add a document:</p>
+<div class="pre_wrapper lang-console">
+<pre class="programlisting prettyprint lang-console">PUT twitter/tweet/1
+{
+    "counter" : 1,
+    "tags" : ["red"]
+}</pre>
+</div>
+<div class="console_widget" data-snippet="snippets/89.console"></div>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li class="listitem">
+and try to retrieve it:
+</li>
+</ol>
+</div>
+<div class="pre_wrapper lang-console">
+<pre class="programlisting prettyprint lang-console">GET twitter/tweet/1?stored_fields=tags,counter</pre>
+</div>
+<div class="console_widget" data-snippet="snippets/90.console"></div>
+<p>The result of the above get operation is:</p>
+<div class="pre_wrapper lang-js">
+<pre class="programlisting prettyprint lang-js">{
+   "_index": "twitter",
+   "_type": "tweet",
+   "_id": "1",
+   "_version": 1,
+   "found": true,
+   "fields": {
+      "tags": [
+         "red"
+      ]
+   }
+}</pre>
+</div>
+<p>Field values fetched from the document it self are always returned as an array.
+Since the <code class="literal">counter</code> field is not stored the get request simply ignores it when trying to get the <code class="literal">stored_fields.</code></p>
+<p>It is also possible to retrieve metadata fields like the <code class="literal">_routing</code> field:</p>
+<div class="pre_wrapper lang-console">
+<pre class="programlisting prettyprint lang-console">PUT twitter/tweet/2?routing=user1
+{
+    "counter" : 1,
+    "tags" : ["white"]
+}</pre>
+</div>
+<div class="console_widget" data-snippet="snippets/91.console"></div>
+<div class="pre_wrapper lang-console">
+<pre class="programlisting prettyprint lang-console">GET twitter/tweet/2?routing=user1&amp;stored_fields=tags,counter</pre>
+</div>
+<div class="console_widget" data-snippet="snippets/92.console"></div>
+<p>The result of the above get operation is:</p>
+<div class="pre_wrapper lang-js">
+<pre class="programlisting prettyprint lang-js">{
+   "_index": "twitter",
+   "_type": "tweet",
+   "_id": "2",
+   "_version": 1,
+   "_routing": "user1",
+   "found": true,
+   "fields": {
+      "tags": [
+         "white"
+      ]
+   }
+}</pre>
+</div>
+<p>Also only leaf fields can be returned via the <code class="literal">stored_field</code> option. So object fields can&#8217;t be returned and such requests
+will fail.</p>
+<h3><a id="_source"></a>Getting the <code class="literal">_source</code> directly<a class="edit_me edit_me_private" rel="nofollow" title="Editing on GitHub is available to Elastic" href="https://github.com/elastic/elasticsearch/edit/6.0/docs/reference/docs/get.asciidoc">edit</a></h3>
+<p>Use the <code class="literal">/{index}/{type}/{id}/_source</code> endpoint to get
+just the <code class="literal">_source</code> field of the document,
+without any additional content around it. For example:</p>
+<div class="pre_wrapper lang-console">
+<pre class="programlisting prettyprint lang-console">GET twitter/tweet/1/_source</pre>
+</div>
+<div class="console_widget" data-snippet="snippets/93.console"></div>
+<p>You can also use the same source filtering parameters to control which parts of the <code class="literal">_source</code> will be returned:</p>
+<div class="pre_wrapper lang-console">
+<pre class="programlisting prettyprint lang-console">GET twitter/tweet/1/_source?_source_include=*.id&amp;_source_exclude=entities'</pre>
+</div>
+<div class="console_widget" data-snippet="snippets/94.console"></div>
+<p>Note, there is also a HEAD variant for the _source endpoint to efficiently test for document _source existence.
+An existing document will not have a _source if it is disabled in the <a class="xref" href="mapping-source-field.html" title="_source field">mapping</a>.</p>
+<div class="pre_wrapper lang-console">
+<pre class="programlisting prettyprint lang-console">HEAD twitter/tweet/1/_source</pre>
+</div>
+<div class="console_widget" data-snippet="snippets/95.console"></div>
+<h3><a id="get-routing"></a>Routing<a class="edit_me edit_me_private" rel="nofollow" title="Editing on GitHub is available to Elastic" href="https://github.com/elastic/elasticsearch/edit/6.0/docs/reference/docs/get.asciidoc">edit</a></h3>
+<p>When indexing using the ability to control the routing, in order to get
+a document, the routing value should also be provided. For example:</p>
+<div class="pre_wrapper lang-console">
+<pre class="programlisting prettyprint lang-console">GET twitter/tweet/2?routing=user1</pre>
+</div>
+<div class="console_widget" data-snippet="snippets/96.console"></div>
+<p>The above will get a tweet with id 2, but will be routed based on the
+user. Note, issuing a get without the correct routing, will cause the
+document not to be fetched.</p>
+<h3><a id="preference"></a>Preference<a class="edit_me edit_me_private" rel="nofollow" title="Editing on GitHub is available to Elastic" href="https://github.com/elastic/elasticsearch/edit/6.0/docs/reference/docs/get.asciidoc">edit</a></h3>
+<p>Controls a <code class="literal">preference</code> of which shard replicas to execute the get
+request on. By default, the operation is randomized between the shard
+replicas.</p>
+<p>The <code class="literal">preference</code> can be set to:</p>
+<div class="variablelist">
+<dl class="variablelist">
+<dt>
+<span class="term">
+<code class="literal">_primary</code>
+</span>
+</dt>
+<dd>
+The operation will go and be executed only on the primary
+shards.
+</dd>
+<dt>
+<span class="term">
+<code class="literal">_local</code>
+</span>
+</dt>
+<dd>
+The operation will prefer to be executed on a local
+allocated shard if possible.
+</dd>
+<dt>
+<span class="term">
+Custom (string) value
+</span>
+</dt>
+<dd>
+A custom value will be used to guarantee that
+the same shards will be used for the same custom value. This can help
+with "jumping values" when hitting different shards in different refresh
+states. A sample value can be something like the web session id, or the
+user name.
+</dd>
+</dl>
+</div>
+<h3><a id="get-refresh"></a>Refresh<a class="edit_me edit_me_private" rel="nofollow" title="Editing on GitHub is available to Elastic" href="https://github.com/elastic/elasticsearch/edit/6.0/docs/reference/docs/get.asciidoc">edit</a></h3>
+<p>The <code class="literal">refresh</code> parameter can be set to <code class="literal">true</code> in order to refresh the
+relevant shard before the get operation and make it searchable. Setting
+it to <code class="literal">true</code> should be done after careful thought and verification that
+this does not cause a heavy load on the system (and slows down
+indexing).</p>
+<h3><a id="get-distributed"></a>Distributed<a class="edit_me edit_me_private" rel="nofollow" title="Editing on GitHub is available to Elastic" href="https://github.com/elastic/elasticsearch/edit/6.0/docs/reference/docs/get.asciidoc">edit</a></h3>
+<p>The get operation gets hashed into a specific shard id. It then gets
+redirected to one of the replicas within that shard id and returns the
+result. The replicas are the primary shard and its replicas within that
+shard id group. This means that the more replicas we will have, the
+better GET scaling we will have.</p>
+<h3><a id="get-versioning"></a>Versioning support<a class="edit_me edit_me_private" rel="nofollow" title="Editing on GitHub is available to Elastic" href="https://github.com/elastic/elasticsearch/edit/6.0/docs/reference/docs/get.asciidoc">edit</a></h3>
+<p>You can use the <code class="literal">version</code> parameter to retrieve the document only if
+its current version is equal to the specified one. This behavior is the same
+for all version types with the exception of version type <code class="literal">FORCE</code> which always
+retrieves the document. Note that <code class="literal">FORCE</code> version type is deprecated.</p>
+<p>Internally, Elasticsearch has marked the old document as deleted and added an
+entirely new document. The old version of the document doesn’t disappear
+immediately, although you won’t be able to access it. Elasticsearch cleans up
+deleted documents in the background as you continue to index more data.</p>
+</div>
+<div class="navfooter">
+<span class="prev">
+<a href="docs-index_.html">« Index API</a>
+</span>
+<span class="next">
+<a href="docs-delete.html">Delete API »</a>
+</span>
+</div>
+</div>
+
+                  <!-- end body -->
+                </div>
+                <div class="col-xs-12 col-sm-4 col-md-4" id="right_col">
+                  <div id="rtpcontainer" style="display: block;">
+                    <div class="mktg-promo">
+                      <h3>Most Popular</h3>
+                      <ul class="icons">
+                        <li class="icon-elasticsearch-white"><a href="https://www.elastic.co/webinars/getting-started-elasticsearch?baymax=default&elektra=docs&storm=top-video">Get Started with Elasticsearch: Video</a></li>
+                        <li class="icon-kibana-white"><a href="https://www.elastic.co/webinars/getting-started-kibana?baymax=default&elektra=docs&storm=top-video">Intro to Kibana: Video</a></li>
+                        <li class="icon-logstash-white"><a href="https://www.elastic.co/webinars/introduction-elk-stack?baymax=default&elektra=docs&storm=top-video">ELK for Logs & Metrics: Video</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+        </div>
+
+
+<div id='elastic-footer'></div>
+<script src='https://www.elastic.co/elastic-footer.js'></script>
+<!-- Footer Section end-->
+
+      </section>
+    </div>
+
+<script src="/guide/static/jquery.js"></script>
+<script type="text/javascript" src="/guide/static/docs.js"></script>
+<script type="text/javascript">
+  window.initial_state = {}</script>
+  </body>
+</html>

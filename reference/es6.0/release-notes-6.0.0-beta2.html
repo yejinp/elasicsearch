@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+<meta charset="UTF-8">
+<title>6.0.0-beta2 Release Notes | Elasticsearch Reference [6.0] | Elastic</title>
+<link rel="home" href="index.html" title="Elasticsearch Reference [6.0]"/>
+<link rel="up" href="es-release-notes.html" title="Release Notes"/>
+<link rel="prev" href="release-notes-6.0.0-rc1.html" title="6.0.0-rc1 Release Notes"/>
+<link rel="next" href="release-notes-6.0.0-beta1.html" title="6.0.0-beta1 Release Notes"/>
+<meta name="DC.type" content="Learn/Docs/Elasticsearch/Reference/6.0"/>
+<meta name="DC.subject" content="Elasticsearch"/>
+<meta name="DC.identifier" content="6.0"/>
+<meta name="robots" content="noindex,nofollow"/>
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.optimizely.com/js/18132920325.js"></script>
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="apple-mobile-web-app-title" content="Elastic">
+    <meta name="application-name" content="Elastic">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="naver-site-verification" content="936882c1853b701b3cef3721758d80535413dbfd" />
+    <meta name="yandex-verification" content="d8a47e95d0972434" />
+    <meta name="localized" content="true" />
+    <meta name="st:robots" content="follow,index" />
+    <meta property="og:image" content="https://www.elastic.co/static/images/elastic-logo-200.png" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon-precomposed" sizes="64x64" href="/favicon_64x64_16bit.png">
+    <link rel="apple-touch-icon-precomposed" sizes="32x32" href="/favicon_32x32.png">
+    <link rel="apple-touch-icon-precomposed" sizes="16x16" href="/favicon_16x16.png">
+    <!-- Give IE8 a fighting chance -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="/guide/static/styles.css" />
+  </head>
+
+  <!--© 2015-2022 Elasticsearch B.V. -->
+  <!-- All Elastic documentation is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License. -->
+  <!-- http://creativecommons.org/licenses/by-nc-nd/4.0/ -->
+  
+  <body>
+    <!-- Google Tag Manager -->
+    <script>dataLayer = [];</script><noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-58RLH5" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-58RLH5');</script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-12395217-16"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-12395217-16');
+    </script>
+
+    <!--BEGIN QUALTRICS WEBSITE FEEDBACK SNIPPET-->
+    <script type='text/javascript'>
+      (function(){var g=function(e,h,f,g){
+      this.get=function(a){for(var a=a+"=",c=document.cookie.split(";"),b=0,e=c.length;b<e;b++){for(var d=c[b];" "==d.charAt(0);)d=d.substring(1,d.length);if(0==d.indexOf(a))return d.substring(a.length,d.length)}return null};
+      this.set=function(a,c){var b="",b=new Date;b.setTime(b.getTime()+6048E5);b="; expires="+b.toGMTString();document.cookie=a+"="+c+b+"; path=/; "};
+      this.check=function(){var a=this.get(f);if(a)a=a.split(":");else if(100!=e)"v"==h&&(e=Math.random()>=e/100?0:100),a=[h,e,0],this.set(f,a.join(":"));else return!0;var c=a[1];if(100==c)return!0;switch(a[0]){case "v":return!1;case "r":return c=a[2]%Math.floor(100/c),a[2]++,this.set(f,a.join(":")),!c}return!0};
+      this.go=function(){if(this.check()){var a=document.createElement("script");a.type="text/javascript";a.src=g;document.body&&document.body.appendChild(a)}};
+      this.start=function(){var a=this;window.addEventListener?window.addEventListener("load",function(){a.go()},!1):window.attachEvent&&window.attachEvent("onload",function(){a.go()})}};
+      try{(new g(100,"r","QSI_S_ZN_emkP0oSe9Qrn7kF","https://znemkp0ose9qrn7kf-elastic.siteintercept.qualtrics.com/WRSiteInterceptEngine/?Q_ZID=ZN_emkP0oSe9Qrn7kF")).start()}catch(i){}})();
+    </script><div id='ZN_emkP0oSe9Qrn7kF'><!--DO NOT REMOVE-CONTENTS PLACED HERE--></div>
+    <!--END WEBSITE FEEDBACK SNIPPET-->
+
+    <div id='elastic-nav' style="display:none;"></div>
+    <script src='https://www.elastic.co/elastic-nav.js'></script>
+
+    <!-- Subnav -->
+    <div>
+      <div>
+        <div class="tertiary-nav d-none d-md-block">
+          <div class="container">
+            <div class="p-t-b-15 d-flex justify-content-between nav-container">
+              <div class="breadcrum-wrapper"><span><a href="/guide/" style="font-size: 14px; font-weight: 600; color: #000;">Docs</a></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="main-container">
+      <section id="content" >
+        <div class="content-wrapper">
+
+          <section id="guide" lang="en">
+            <div class="container">
+              <div class="row">
+                <div class="col-xs-12 col-sm-8 col-md-8 guide-section">
+                  <!-- start body -->
+                  <div class="page_header">
+<p>
+  <strong>WARNING</strong>: Version 6.0 of Elasticsearch has passed its 
+  <a href="https://www.elastic.co/support/eol">EOL date</a>. 
+</p>  
+<p>
+  This documentation is no longer being maintained and may be removed. 
+  If you are running this version, we strongly advise you to upgrade. 
+  For the latest information, see the 
+  <a href="../current/index.html">current release documentation</a>. 
+</p>
+</div>
+<div id="content">
+<div class="breadcrumbs">
+<span class="breadcrumb-link"><a href="index.html">Elasticsearch Reference [6.0]</a></span>
+»
+<span class="breadcrumb-link"><a href="es-release-notes.html">Release Notes</a></span>
+»
+<span class="breadcrumb-node">6.0.0-beta2 Release Notes</span>
+</div>
+<div class="navheader">
+<span class="prev">
+<a href="release-notes-6.0.0-rc1.html">« 6.0.0-rc1 Release Notes</a>
+</span>
+<span class="next">
+<a href="release-notes-6.0.0-beta1.html">6.0.0-beta1 Release Notes »</a>
+</span>
+</div>
+<div class="chapter">
+<div class="titlepage"><div><div>
+<h2 class="title"><a id="release-notes-6.0.0-beta2"></a>6.0.0-beta2 Release Notes<a class="edit_me edit_me_private" rel="nofollow" title="Editing on GitHub is available to Elastic" href="https://github.com/elastic/elasticsearch/edit/6.0/docs/reference/release-notes/6.0.0-beta2.asciidoc">edit</a></h2>
+</div></div></div>
+<p>Also see <a class="xref" href="breaking-changes-6.0.html" title="Breaking changes in 6.0"><em>Breaking changes in 6.0</em></a>.</p>
+<h3><a id="breaking-6.0.0-beta2"></a>Breaking changes<a class="edit_me edit_me_private" rel="nofollow" title="Editing on GitHub is available to Elastic" href="https://github.com/elastic/elasticsearch/edit/6.0/docs/reference/release-notes/6.0.0-beta2.asciidoc">edit</a></h3>
+<div class="variablelist">
+<dl class="variablelist">
+<dt>
+<span class="term">
+Analysis
+</span>
+</dt>
+<dd>
+<div class="ulist itemizedlist">
+<ul class="itemizedlist">
+<li class="listitem">
+Do not allow custom analyzers to have the same names as built-in analyzers <a href="https://github.com/elastic/elasticsearch/pull/22349" class="ulink" target="_top">#22349</a> (issue: <a href="https://github.com/elastic/elasticsearch/issues/22263" class="ulink" target="_top">#22263</a>)
+</li>
+</ul>
+</div>
+</dd>
+<dt>
+<span class="term">
+Cluster
+</span>
+</dt>
+<dd>
+<div class="ulist itemizedlist">
+<ul class="itemizedlist">
+<li class="listitem">
+Disallow : in cluster and index/alias names <a href="https://github.com/elastic/elasticsearch/pull/26247" class="ulink" target="_top">#26247</a> (issue: <a href="https://github.com/elastic/elasticsearch/issues/23892" class="ulink" target="_top">#23892</a>)
+</li>
+</ul>
+</div>
+</dd>
+<dt>
+<span class="term">
+Inner Hits
+</span>
+</dt>
+<dd>
+<div class="ulist itemizedlist">
+<ul class="itemizedlist">
+<li class="listitem">
+Unfiltered nested source should keep its full path <a href="https://github.com/elastic/elasticsearch/pull/26102" class="ulink" target="_top">#26102</a> (issues: <a href="https://github.com/elastic/elasticsearch/issues/18567" class="ulink" target="_top">#18567</a>, <a href="https://github.com/elastic/elasticsearch/issues/23090" class="ulink" target="_top">#23090</a>)
+</li>
+</ul>
+</div>
+</dd>
+<dt>
+<span class="term">
+Mapping
+</span>
+</dt>
+<dd>
+<div class="ulist itemizedlist">
+<ul class="itemizedlist">
+<li class="listitem">
+Reject out of range numbers for float, double and half_float <a href="https://github.com/elastic/elasticsearch/pull/25826" class="ulink" target="_top">#25826</a> (issue: <a href="https://github.com/elastic/elasticsearch/issues/25534" class="ulink" target="_top">#25534</a>)
+</li>
+</ul>
+</div>
+</dd>
+<dt>
+<span class="term">
+Network
+</span>
+</dt>
+<dd>
+<div class="ulist itemizedlist">
+<ul class="itemizedlist">
+<li class="listitem">
+Remove unused Netty-related settings <a href="https://github.com/elastic/elasticsearch/pull/26161" class="ulink" target="_top">#26161</a>
+</li>
+</ul>
+</div>
+</dd>
+<dt>
+<span class="term">
+Packaging
+</span>
+</dt>
+<dd>
+<div class="ulist itemizedlist">
+<ul class="itemizedlist">
+<li class="listitem">
+Rename CONF_DIR to ES_PATH_CONF <a href="https://github.com/elastic/elasticsearch/pull/26197" class="ulink" target="_top">#26197</a> (issue: <a href="https://github.com/elastic/elasticsearch/issues/26154" class="ulink" target="_top">#26154</a>)
+</li>
+</ul>
+</div>
+</dd>
+<dt>
+<span class="term">
+Query DSL
+</span>
+</dt>
+<dd>
+<div class="ulist itemizedlist">
+<ul class="itemizedlist">
+<li class="listitem">
+Throw exception in scroll requests using <code class="literal">from</code> <a href="https://github.com/elastic/elasticsearch/pull/26235" class="ulink" target="_top">#26235</a> (issue: <a href="https://github.com/elastic/elasticsearch/issues/9373" class="ulink" target="_top">#9373</a>)
+</li>
+</ul>
+</div>
+</dd>
+</dl>
+</div>
+<h3><a id="breaking-java-6.0.0-beta2"></a>Breaking Java changes<a class="edit_me edit_me_private" rel="nofollow" title="Editing on GitHub is available to Elastic" href="https://github.com/elastic/elasticsearch/edit/6.0/docs/reference/release-notes/6.0.0-beta2.asciidoc">edit</a></h3>
+<div class="variablelist">
+<dl class="variablelist">
+<dt>
+<span class="term">
+Aggregations
+</span>
+</dt>
+<dd>
+<div class="ulist itemizedlist">
+<ul class="itemizedlist">
+<li class="listitem">
+Fix NPE when <code class="literal">values</code> is omitted on percentile_ranks agg <a href="https://github.com/elastic/elasticsearch/pull/26046" class="ulink" target="_top">#26046</a>
+</li>
+</ul>
+</div>
+</dd>
+</dl>
+</div>
+<h3><a id="enhancement-6.0.0-beta2"></a>Enhancements<a class="edit_me edit_me_private" rel="nofollow" title="Editing on GitHub is available to Elastic" href="https://github.com/elastic/elasticsearch/edit/6.0/docs/reference/release-notes/6.0.0-beta2.asciidoc">edit</a></h3>
+<div class="variablelist">
+<dl class="variablelist">
+<dt>
+<span class="term">
+Aggregations
+</span>
+</dt>
+<dd>
+<div class="ulist itemizedlist">
+<ul class="itemizedlist">
+<li class="listitem">
+Support distance units in GeoHashGrid aggregation precision <a href="https://github.com/elastic/elasticsearch/pull/26291" class="ulink" target="_top">#26291</a> (issue: <a href="https://github.com/elastic/elasticsearch/issues/5042" class="ulink" target="_top">#5042</a>)
+</li>
+<li class="listitem">
+Reject multiple methods in <code class="literal">percentiles</code> aggregation <a href="https://github.com/elastic/elasticsearch/pull/26163" class="ulink" target="_top">#26163</a> (issue: <a href="https://github.com/elastic/elasticsearch/issues/26095" class="ulink" target="_top">#26095</a>)
+</li>
+<li class="listitem">
+Use <code class="literal">global_ordinals_hash</code> execution mode when sorting by sub aggregations. <a href="https://github.com/elastic/elasticsearch/pull/26014" class="ulink" target="_top">#26014</a> (issue: <a href="https://github.com/elastic/elasticsearch/issues/24359" class="ulink" target="_top">#24359</a>)
+</li>
+<li class="listitem">
+Add a specialized deferring collector for terms aggregator <a href="https://github.com/elastic/elasticsearch/pull/25190" class="ulink" target="_top">#25190</a>
+</li>
+</ul>
+</div>
+</dd>
+<dt>
+<span class="term">
+Core
+</span>
+</dt>
+<dd>
+<div class="ulist itemizedlist">
+<ul class="itemizedlist">
+<li class="listitem">
+Use Java 9 FilePermission model <a href="https://github.com/elastic/elasticsearch/pull/26302" class="ulink" target="_top">#26302</a> (issue: <a href="https://github.com/elastic/elasticsearch/issues/21534" class="ulink" target="_top">#21534</a>)
+</li>
+<li class="listitem">
+Add friendlier message on bad keystore permissions <a href="https://github.com/elastic/elasticsearch/pull/26284" class="ulink" target="_top">#26284</a>
+</li>
+<li class="listitem">
+Epoch millis and second formats accept float implicitly <a href="https://github.com/elastic/elasticsearch/pull/26119" class="ulink" target="_top">#26119</a> (issue: <a href="https://github.com/elastic/elasticsearch/issues/14641" class="ulink" target="_top">#14641</a>)
+</li>
+</ul>
+</div>
+</dd>
+<dt>
+<span class="term">
+Internal
+</span>
+</dt>
+<dd>
+<div class="ulist itemizedlist">
+<ul class="itemizedlist">
+<li class="listitem">
+Prevent cluster internal <code class="literal">ClusterState.Custom</code> impls to leak to a client <a href="https://github.com/elastic/elasticsearch/pull/26232" class="ulink" target="_top">#26232</a>
+</li>
+<li class="listitem">
+Use holder pattern for lazy deprecation loggers <a href="https://github.com/elastic/elasticsearch/pull/26218" class="ulink" target="_top">#26218</a> (issue: <a href="https://github.com/elastic/elasticsearch/issues/26210" class="ulink" target="_top">#26210</a>)
+</li>
+<li class="listitem">
+Allow <code class="literal">ClusterState.Custom</code> to be created on initial cluster states <a href="https://github.com/elastic/elasticsearch/pull/26144" class="ulink" target="_top">#26144</a>
+</li>
+</ul>
+</div>
+</dd>
+<dt>
+<span class="term">
+Java High Level REST Client
+</span>
+</dt>
+<dd>
+<div class="ulist itemizedlist">
+<ul class="itemizedlist">
+<li class="listitem">
+Make RestHighLevelClient Closeable and simplify its creation <a href="https://github.com/elastic/elasticsearch/pull/26180" class="ulink" target="_top">#26180</a> (issue: <a href="https://github.com/elastic/elasticsearch/issues/26086" class="ulink" target="_top">#26086</a>)
+</li>
+</ul>
+</div>
+</dd>
+<dt>
+<span class="term">
+Mapping
+</span>
+</dt>
+<dd>
+<div class="ulist itemizedlist">
+<ul class="itemizedlist">
+<li class="listitem">
+Loosen the restrictions on disabling _all in 6.x <a href="https://github.com/elastic/elasticsearch/pull/26259" class="ulink" target="_top">#26259</a>
+</li>
+</ul>
+</div>
+</dd>
+<dt>
+<span class="term">
+Percolator
+</span>
+</dt>
+<dd>
+<div class="ulist itemizedlist">
+<ul class="itemizedlist">
+<li class="listitem">
+Store the QueryBuilder&#8217;s Writable representation instead of its XContent representation <a href="https://github.com/elastic/elasticsearch/pull/25456" class="ulink" target="_top">#25456</a>
+</li>
+<li class="listitem">
+Add support for selecting percolator query candidate matches containing wildcard / prefix queries <a href="https://github.com/elastic/elasticsearch/pull/25351" class="ulink" target="_top">#25351</a>
+</li>
+</ul>
+</div>
+</dd>
+<dt>
+<span class="term">
+Settings
+</span>
+</dt>
+<dd>
+<div class="ulist itemizedlist">
+<ul class="itemizedlist">
+<li class="listitem">
+Persist created keystore on startup unless keystore is present <a href="https://github.com/elastic/elasticsearch/pull/26253" class="ulink" target="_top">#26253</a> (issue: <a href="https://github.com/elastic/elasticsearch/issues/26126" class="ulink" target="_top">#26126</a>)
+</li>
+<li class="listitem">
+Settings: Add keystore.seed auto generated secure setting <a href="https://github.com/elastic/elasticsearch/pull/26149" class="ulink" target="_top">#26149</a>
+</li>
+<li class="listitem">
+Settings: Add keystore creation to add commands <a href="https://github.com/elastic/elasticsearch/pull/26126" class="ulink" target="_top">#26126</a>
+</li>
+</ul>
+</div>
+</dd>
+</dl>
+</div>
+<h3><a id="bug-6.0.0-beta2"></a>Bug fixes<a class="edit_me edit_me_private" rel="nofollow" title="Editing on GitHub is available to Elastic" href="https://github.com/elastic/elasticsearch/edit/6.0/docs/reference/release-notes/6.0.0-beta2.asciidoc">edit</a></h3>
+<div class="variablelist">
+<dl class="variablelist">
+<dt>
+<span class="term">
+Aggregations
+</span>
+</dt>
+<dd>
+<div class="ulist itemizedlist">
+<ul class="itemizedlist">
+<li class="listitem">
+Check bucket metric ages point to a multi bucket agg <a href="https://github.com/elastic/elasticsearch/pull/26215" class="ulink" target="_top">#26215</a> (issue: <a href="https://github.com/elastic/elasticsearch/issues/25775" class="ulink" target="_top">#25775</a>)
+</li>
+</ul>
+</div>
+</dd>
+<dt>
+<span class="term">
+Allocation
+</span>
+</dt>
+<dd>
+<div class="ulist itemizedlist">
+<ul class="itemizedlist">
+<li class="listitem">
+Fix DiskThresholdMonitor flood warning <a href="https://github.com/elastic/elasticsearch/pull/26204" class="ulink" target="_top">#26204</a> (issue: <a href="https://github.com/elastic/elasticsearch/issues/26201" class="ulink" target="_top">#26201</a>)
+</li>
+<li class="listitem">
+Allow wildcards for shard IP filtering <a href="https://github.com/elastic/elasticsearch/pull/26187" class="ulink" target="_top">#26187</a> (issues: <a href="https://github.com/elastic/elasticsearch/issues/22591" class="ulink" target="_top">#22591</a>, <a href="https://github.com/elastic/elasticsearch/issues/26184" class="ulink" target="_top">#26184</a>)
+</li>
+</ul>
+</div>
+</dd>
+<dt>
+<span class="term">
+CRUD
+</span>
+</dt>
+<dd>
+<div class="ulist itemizedlist">
+<ul class="itemizedlist">
+<li class="listitem">
+Serialize and expose timeout of acknowledged requests in REST layer <a href="https://github.com/elastic/elasticsearch/pull/26189" class="ulink" target="_top">#26189</a> (issue: <a href="https://github.com/elastic/elasticsearch/issues/26213" class="ulink" target="_top">#26213</a>)
+</li>
+<li class="listitem">
+Fix silent loss of last command to _bulk and _msearch due to missing newline <a href="https://github.com/elastic/elasticsearch/pull/25740" class="ulink" target="_top">#25740</a> (issue: <a href="https://github.com/elastic/elasticsearch/issues/7601" class="ulink" target="_top">#7601</a>)
+</li>
+</ul>
+</div>
+</dd>
+<dt>
+<span class="term">
+Cluster
+</span>
+</dt>
+<dd>
+<div class="ulist itemizedlist">
+<ul class="itemizedlist">
+<li class="listitem">
+Register setting <code class="literal">cluster.indices.tombstones.size</code> <a href="https://github.com/elastic/elasticsearch/pull/26193" class="ulink" target="_top">#26193</a> (issue: <a href="https://github.com/elastic/elasticsearch/issues/26191" class="ulink" target="_top">#26191</a>)
+</li>
+</ul>
+</div>
+</dd>
+<dt>
+<span class="term">
+Highlighting
+</span>
+</dt>
+<dd>
+<div class="ulist itemizedlist">
+<ul class="itemizedlist">
+<li class="listitem">
+Fix nested query highlighting <a href="https://github.com/elastic/elasticsearch/pull/26305" class="ulink" target="_top">#26305</a> (issue: <a href="https://github.com/elastic/elasticsearch/issues/26230" class="ulink" target="_top">#26230</a>)
+</li>
+</ul>
+</div>
+</dd>
+<dt>
+<span class="term">
+Logging
+</span>
+</dt>
+<dd>
+<div class="ulist itemizedlist">
+<ul class="itemizedlist">
+<li class="listitem">
+Allow not configure logging without config <a href="https://github.com/elastic/elasticsearch/pull/26209" class="ulink" target="_top">#26209</a> (issues: <a href="https://github.com/elastic/elasticsearch/issues/20575" class="ulink" target="_top">#20575</a>, <a href="https://github.com/elastic/elasticsearch/issues/24076" class="ulink" target="_top">#24076</a>)
+</li>
+</ul>
+</div>
+</dd>
+<dt>
+<span class="term">
+Mapping
+</span>
+</dt>
+<dd>
+<div class="ulist itemizedlist">
+<ul class="itemizedlist">
+<li class="listitem">
+ICUCollationKeywordFieldMapper use SortedSetDocValuesField <a href="https://github.com/elastic/elasticsearch/pull/26267" class="ulink" target="_top">#26267</a>
+</li>
+<li class="listitem">
+Fix serialization of the <code class="literal">_all</code> field. <a href="https://github.com/elastic/elasticsearch/pull/26143" class="ulink" target="_top">#26143</a> (issue: <a href="https://github.com/elastic/elasticsearch/issues/26136" class="ulink" target="_top">#26136</a>)
+</li>
+</ul>
+</div>
+</dd>
+<dt>
+<span class="term">
+Network
+</span>
+</dt>
+<dd>
+<div class="ulist itemizedlist">
+<ul class="itemizedlist">
+<li class="listitem">
+Release pipelined http responses on close <a href="https://github.com/elastic/elasticsearch/pull/26226" class="ulink" target="_top">#26226</a>
+</li>
+</ul>
+</div>
+</dd>
+<dt>
+<span class="term">
+Packaging
+</span>
+</dt>
+<dd>
+<div class="ulist itemizedlist">
+<ul class="itemizedlist">
+<li class="listitem">
+Detect modified keystore on package removal <a href="https://github.com/elastic/elasticsearch/pull/26300" class="ulink" target="_top">#26300</a>
+</li>
+<li class="listitem">
+Create keystore on RPM and Debian package install <a href="https://github.com/elastic/elasticsearch/pull/26282" class="ulink" target="_top">#26282</a>
+</li>
+<li class="listitem">
+Add safer empty variable checking for Windows <a href="https://github.com/elastic/elasticsearch/pull/26268" class="ulink" target="_top">#26268</a> (issue: <a href="https://github.com/elastic/elasticsearch/issues/26261" class="ulink" target="_top">#26261</a>)
+</li>
+<li class="listitem">
+Export HOSTNAME environment variable <a href="https://github.com/elastic/elasticsearch/pull/26262" class="ulink" target="_top">#26262</a> (issues: <a href="https://github.com/elastic/elasticsearch/issues/25807" class="ulink" target="_top">#25807</a>, <a href="https://github.com/elastic/elasticsearch/issues/26255" class="ulink" target="_top">#26255</a>)
+</li>
+<li class="listitem">
+Fix daemonization command status test <a href="https://github.com/elastic/elasticsearch/pull/26196" class="ulink" target="_top">#26196</a> (issue: <a href="https://github.com/elastic/elasticsearch/issues/26080" class="ulink" target="_top">#26080</a>)
+</li>
+<li class="listitem">
+Set RuntimeDirectory in systemd service <a href="https://github.com/elastic/elasticsearch/pull/23526" class="ulink" target="_top">#23526</a>
+</li>
+</ul>
+</div>
+</dd>
+<dt>
+<span class="term">
+Search
+</span>
+</dt>
+<dd>
+<div class="ulist itemizedlist">
+<ul class="itemizedlist">
+<li class="listitem">
+Refactor simple_query_string to handle text part like multi_match and query_string <a href="https://github.com/elastic/elasticsearch/pull/26145" class="ulink" target="_top">#26145</a> (issue: <a href="https://github.com/elastic/elasticsearch/issues/25726" class="ulink" target="_top">#25726</a>)
+</li>
+<li class="listitem">
+Fix <code class="literal">_exists_</code> in query_string on empty indices. <a href="https://github.com/elastic/elasticsearch/pull/25993" class="ulink" target="_top">#25993</a> (issue: <a href="https://github.com/elastic/elasticsearch/issues/25956" class="ulink" target="_top">#25956</a>)
+</li>
+</ul>
+</div>
+</dd>
+</dl>
+</div>
+<h3><a id="upgrade-6.0.0-beta2"></a>Upgrades<a class="edit_me edit_me_private" rel="nofollow" title="Editing on GitHub is available to Elastic" href="https://github.com/elastic/elasticsearch/edit/6.0/docs/reference/release-notes/6.0.0-beta2.asciidoc">edit</a></h3>
+<div class="variablelist">
+<dl class="variablelist">
+<dt>
+<span class="term">
+Core
+</span>
+</dt>
+<dd>
+<div class="ulist itemizedlist">
+<ul class="itemizedlist">
+<li class="listitem">
+Upgrade to lucene-7.0.0-snapshot-a128fcb. <a href="https://github.com/elastic/elasticsearch/pull/26090" class="ulink" target="_top">#26090</a>
+</li>
+</ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="navfooter">
+<span class="prev">
+<a href="release-notes-6.0.0-rc1.html">« 6.0.0-rc1 Release Notes</a>
+</span>
+<span class="next">
+<a href="release-notes-6.0.0-beta1.html">6.0.0-beta1 Release Notes »</a>
+</span>
+</div>
+</div>
+
+                  <!-- end body -->
+                </div>
+                <div class="col-xs-12 col-sm-4 col-md-4" id="right_col">
+                  <div id="rtpcontainer" style="display: block;">
+                    <div class="mktg-promo">
+                      <h3>Most Popular</h3>
+                      <ul class="icons">
+                        <li class="icon-elasticsearch-white"><a href="https://www.elastic.co/webinars/getting-started-elasticsearch?baymax=default&elektra=docs&storm=top-video">Get Started with Elasticsearch: Video</a></li>
+                        <li class="icon-kibana-white"><a href="https://www.elastic.co/webinars/getting-started-kibana?baymax=default&elektra=docs&storm=top-video">Intro to Kibana: Video</a></li>
+                        <li class="icon-logstash-white"><a href="https://www.elastic.co/webinars/introduction-elk-stack?baymax=default&elektra=docs&storm=top-video">ELK for Logs & Metrics: Video</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+        </div>
+
+
+<div id='elastic-footer'></div>
+<script src='https://www.elastic.co/elastic-footer.js'></script>
+<!-- Footer Section end-->
+
+      </section>
+    </div>
+
+<script src="/guide/static/jquery.js"></script>
+<script type="text/javascript" src="/guide/static/docs.js"></script>
+<script type="text/javascript">
+  window.initial_state = {}</script>
+  </body>
+</html>

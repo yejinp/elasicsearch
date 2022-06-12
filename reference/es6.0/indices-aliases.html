@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+<meta charset="UTF-8">
+<title>Index Aliases | Elasticsearch Reference [6.0] | Elastic</title>
+<link rel="home" href="index.html" title="Elasticsearch Reference [6.0]"/>
+<link rel="up" href="indices.html" title="Indices APIs"/>
+<link rel="prev" href="indices-types-exists.html" title="Types Exists"/>
+<link rel="next" href="indices-update-settings.html" title="Update Indices Settings"/>
+<meta name="DC.type" content="Learn/Docs/Elasticsearch/Reference/6.0"/>
+<meta name="DC.subject" content="Elasticsearch"/>
+<meta name="DC.identifier" content="6.0"/>
+<meta name="robots" content="noindex,nofollow"/>
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.optimizely.com/js/18132920325.js"></script>
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="apple-mobile-web-app-title" content="Elastic">
+    <meta name="application-name" content="Elastic">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="naver-site-verification" content="936882c1853b701b3cef3721758d80535413dbfd" />
+    <meta name="yandex-verification" content="d8a47e95d0972434" />
+    <meta name="localized" content="true" />
+    <meta name="st:robots" content="follow,index" />
+    <meta property="og:image" content="https://www.elastic.co/static/images/elastic-logo-200.png" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon-precomposed" sizes="64x64" href="/favicon_64x64_16bit.png">
+    <link rel="apple-touch-icon-precomposed" sizes="32x32" href="/favicon_32x32.png">
+    <link rel="apple-touch-icon-precomposed" sizes="16x16" href="/favicon_16x16.png">
+    <!-- Give IE8 a fighting chance -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="/guide/static/styles.css" />
+  </head>
+
+  <!--© 2015-2022 Elasticsearch B.V. -->
+  <!-- All Elastic documentation is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License. -->
+  <!-- http://creativecommons.org/licenses/by-nc-nd/4.0/ -->
+  
+  <body>
+    <!-- Google Tag Manager -->
+    <script>dataLayer = [];</script><noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-58RLH5" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-58RLH5');</script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-12395217-16"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-12395217-16');
+    </script>
+
+    <!--BEGIN QUALTRICS WEBSITE FEEDBACK SNIPPET-->
+    <script type='text/javascript'>
+      (function(){var g=function(e,h,f,g){
+      this.get=function(a){for(var a=a+"=",c=document.cookie.split(";"),b=0,e=c.length;b<e;b++){for(var d=c[b];" "==d.charAt(0);)d=d.substring(1,d.length);if(0==d.indexOf(a))return d.substring(a.length,d.length)}return null};
+      this.set=function(a,c){var b="",b=new Date;b.setTime(b.getTime()+6048E5);b="; expires="+b.toGMTString();document.cookie=a+"="+c+b+"; path=/; "};
+      this.check=function(){var a=this.get(f);if(a)a=a.split(":");else if(100!=e)"v"==h&&(e=Math.random()>=e/100?0:100),a=[h,e,0],this.set(f,a.join(":"));else return!0;var c=a[1];if(100==c)return!0;switch(a[0]){case "v":return!1;case "r":return c=a[2]%Math.floor(100/c),a[2]++,this.set(f,a.join(":")),!c}return!0};
+      this.go=function(){if(this.check()){var a=document.createElement("script");a.type="text/javascript";a.src=g;document.body&&document.body.appendChild(a)}};
+      this.start=function(){var a=this;window.addEventListener?window.addEventListener("load",function(){a.go()},!1):window.attachEvent&&window.attachEvent("onload",function(){a.go()})}};
+      try{(new g(100,"r","QSI_S_ZN_emkP0oSe9Qrn7kF","https://znemkp0ose9qrn7kf-elastic.siteintercept.qualtrics.com/WRSiteInterceptEngine/?Q_ZID=ZN_emkP0oSe9Qrn7kF")).start()}catch(i){}})();
+    </script><div id='ZN_emkP0oSe9Qrn7kF'><!--DO NOT REMOVE-CONTENTS PLACED HERE--></div>
+    <!--END WEBSITE FEEDBACK SNIPPET-->
+
+    <div id='elastic-nav' style="display:none;"></div>
+    <script src='https://www.elastic.co/elastic-nav.js'></script>
+
+    <!-- Subnav -->
+    <div>
+      <div>
+        <div class="tertiary-nav d-none d-md-block">
+          <div class="container">
+            <div class="p-t-b-15 d-flex justify-content-between nav-container">
+              <div class="breadcrum-wrapper"><span><a href="/guide/" style="font-size: 14px; font-weight: 600; color: #000;">Docs</a></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="main-container">
+      <section id="content" >
+        <div class="content-wrapper">
+
+          <section id="guide" lang="en">
+            <div class="container">
+              <div class="row">
+                <div class="col-xs-12 col-sm-8 col-md-8 guide-section">
+                  <!-- start body -->
+                  <div class="page_header">
+<p>
+  <strong>WARNING</strong>: Version 6.0 of Elasticsearch has passed its 
+  <a href="https://www.elastic.co/support/eol">EOL date</a>. 
+</p>  
+<p>
+  This documentation is no longer being maintained and may be removed. 
+  If you are running this version, we strongly advise you to upgrade. 
+  For the latest information, see the 
+  <a href="../current/index.html">current release documentation</a>. 
+</p>
+</div>
+<div id="content">
+<div class="breadcrumbs">
+<span class="breadcrumb-link"><a href="index.html">Elasticsearch Reference [6.0]</a></span>
+»
+<span class="breadcrumb-link"><a href="indices.html">Indices APIs</a></span>
+»
+<span class="breadcrumb-node">Index Aliases</span>
+</div>
+<div class="navheader">
+<span class="prev">
+<a href="indices-types-exists.html">« Types Exists</a>
+</span>
+<span class="next">
+<a href="indices-update-settings.html">Update Indices Settings »</a>
+</span>
+</div>
+<div class="chapter">
+<div class="titlepage"><div><div>
+<h2 class="title"><a id="indices-aliases"></a>Index Aliases<a class="edit_me edit_me_private" rel="nofollow" title="Editing on GitHub is available to Elastic" href="https://github.com/elastic/elasticsearch/edit/6.0/docs/reference/indices/aliases.asciidoc">edit</a></h2>
+</div></div></div>
+<p>APIs in Elasticsearch accept an index name when working against a
+specific index, and several indices when applicable. The index aliases
+API allows aliasing an index with a name, with all APIs automatically
+converting the alias name to the actual index name. An alias can also be
+mapped to more than one index, and when specifying it, the alias will
+automatically expand to the aliased indices. An alias can also be
+associated with a filter that will automatically be applied when
+searching, and routing values. An alias cannot have the same name as an index.</p>
+<p>Here is a sample of associating the alias <code class="literal">alias1</code> with index <code class="literal">test1</code>:</p>
+<div class="pre_wrapper lang-console">
+<pre class="programlisting prettyprint lang-console">POST /_aliases
+{
+    "actions" : [
+        { "add" : { "index" : "test1", "alias" : "alias1" } }
+    ]
+}</pre>
+</div>
+<div class="console_widget" data-snippet="snippets/573.console"></div>
+<p>And here is removing that same alias:</p>
+<div class="pre_wrapper lang-console">
+<pre class="programlisting prettyprint lang-console">POST /_aliases
+{
+    "actions" : [
+        { "remove" : { "index" : "test1", "alias" : "alias1" } }
+    ]
+}</pre>
+</div>
+<div class="console_widget" data-snippet="snippets/574.console"></div>
+<p>Renaming an alias is a simple <code class="literal">remove</code> then <code class="literal">add</code> operation within the
+same API. This operation is atomic, no need to worry about a short
+period of time where the alias does not point to an index:</p>
+<div class="pre_wrapper lang-console">
+<pre class="programlisting prettyprint lang-console">POST /_aliases
+{
+    "actions" : [
+        { "remove" : { "index" : "test1", "alias" : "alias1" } },
+        { "add" : { "index" : "test2", "alias" : "alias1" } }
+    ]
+}</pre>
+</div>
+<div class="console_widget" data-snippet="snippets/575.console"></div>
+<p>Associating an alias with more than one index is simply several <code class="literal">add</code>
+actions:</p>
+<div class="pre_wrapper lang-console">
+<pre class="programlisting prettyprint lang-console">POST /_aliases
+{
+    "actions" : [
+        { "add" : { "index" : "test1", "alias" : "alias1" } },
+        { "add" : { "index" : "test2", "alias" : "alias1" } }
+    ]
+}</pre>
+</div>
+<div class="console_widget" data-snippet="snippets/576.console"></div>
+<p>Multiple indices can be specified for an action with the <code class="literal">indices</code> array syntax:</p>
+<div class="pre_wrapper lang-console">
+<pre class="programlisting prettyprint lang-console">POST /_aliases
+{
+    "actions" : [
+        { "add" : { "indices" : ["test1", "test2"], "alias" : "alias1" } }
+    ]
+}</pre>
+</div>
+<div class="console_widget" data-snippet="snippets/577.console"></div>
+<p>To specify multiple aliases in one action, the corresponding <code class="literal">aliases</code> array
+syntax exists as well.</p>
+<p>For the example above, a glob pattern can also be used to associate an alias to
+more than one index that share a common name:</p>
+<div class="pre_wrapper lang-console">
+<pre class="programlisting prettyprint lang-console">POST /_aliases
+{
+    "actions" : [
+        { "add" : { "index" : "test*", "alias" : "all_test_indices" } }
+    ]
+}</pre>
+</div>
+<div class="console_widget" data-snippet="snippets/578.console"></div>
+<p>In this case, the alias is a point-in-time alias that will group all
+current indices that match, it will not automatically update as new
+indices that match this pattern are added/removed.</p>
+<p>It is an error to index to an alias which points to more than one index.</p>
+<p>It is also possible to swap an index with an alias in one operation:</p>
+<div class="pre_wrapper lang-console">
+<pre class="programlisting prettyprint lang-console">PUT test     <a id="CO141-1"></a><i class="conum" data-value="1"></i>
+PUT test_2   <a id="CO141-2"></a><i class="conum" data-value="2"></i>
+POST /_aliases
+{
+    "actions" : [
+        { "add":  { "index": "test_2", "alias": "test" } },
+        { "remove_index": { "index": "test" } }  <a id="CO141-3"></a><i class="conum" data-value="3"></i>
+    ]
+}</pre>
+</div>
+<div class="console_widget" data-snippet="snippets/579.console"></div>
+<div class="calloutlist">
+<table border="0" summary="Callout list">
+<tr>
+<td align="left" valign="top" width="5%">
+<p><a href="#CO141-1"><i class="conum" data-value="1"></i></a></p>
+</td>
+<td align="left" valign="top">
+<p>An index we&#8217;ve added by mistake</p>
+</td>
+</tr>
+<tr>
+<td align="left" valign="top" width="5%">
+<p><a href="#CO141-2"><i class="conum" data-value="2"></i></a></p>
+</td>
+<td align="left" valign="top">
+<p>The index we should have added</p>
+</td>
+</tr>
+<tr>
+<td align="left" valign="top" width="5%">
+<p><a href="#CO141-3"><i class="conum" data-value="3"></i></a></p>
+</td>
+<td align="left" valign="top">
+<p><code class="literal">remove_index</code> is just like <a class="xref" href="indices-delete-index.html" title="Delete Index"><em>Delete Index</em></a></p>
+</td>
+</tr>
+</table>
+</div>
+<h3><a id="filtered"></a>Filtered Aliases<a class="edit_me edit_me_private" rel="nofollow" title="Editing on GitHub is available to Elastic" href="https://github.com/elastic/elasticsearch/edit/6.0/docs/reference/indices/aliases.asciidoc">edit</a></h3>
+<p>Aliases with filters provide an easy way to create different "views" of
+the same index. The filter can be defined using Query DSL and is applied
+to all Search, Count, Delete By Query and More Like This operations with
+this alias.</p>
+<p>To create a filtered alias, first we need to ensure that the fields already
+exist in the mapping:</p>
+<div class="pre_wrapper lang-console">
+<pre class="programlisting prettyprint lang-console">PUT /test1
+{
+  "mappings": {
+    "type1": {
+      "properties": {
+        "user" : {
+          "type": "keyword"
+        }
+      }
+    }
+  }
+}</pre>
+</div>
+<div class="console_widget" data-snippet="snippets/580.console"></div>
+<p>Now we can create an alias that uses a filter on field <code class="literal">user</code>:</p>
+<div class="pre_wrapper lang-console">
+<pre class="programlisting prettyprint lang-console">POST /_aliases
+{
+    "actions" : [
+        {
+            "add" : {
+                 "index" : "test1",
+                 "alias" : "alias2",
+                 "filter" : { "term" : { "user" : "kimchy" } }
+            }
+        }
+    ]
+}</pre>
+</div>
+<div class="console_widget" data-snippet="snippets/581.console"></div>
+<h4><a id="aliases-routing"></a>Routing<a class="edit_me edit_me_private" rel="nofollow" title="Editing on GitHub is available to Elastic" href="https://github.com/elastic/elasticsearch/edit/6.0/docs/reference/indices/aliases.asciidoc">edit</a></h4>
+<p>It is possible to associate routing values with aliases. This feature
+can be used together with filtering aliases in order to avoid
+unnecessary shard operations.</p>
+<p>The following command creates a new alias <code class="literal">alias1</code> that points to index
+<code class="literal">test</code>. After <code class="literal">alias1</code> is created, all operations with this alias are
+automatically modified to use value <code class="literal">1</code> for routing:</p>
+<div class="pre_wrapper lang-console">
+<pre class="programlisting prettyprint lang-console">POST /_aliases
+{
+    "actions" : [
+        {
+            "add" : {
+                 "index" : "test",
+                 "alias" : "alias1",
+                 "routing" : "1"
+            }
+        }
+    ]
+}</pre>
+</div>
+<div class="console_widget" data-snippet="snippets/582.console"></div>
+<p>It&#8217;s also possible to specify different routing values for searching
+and indexing operations:</p>
+<div class="pre_wrapper lang-console">
+<pre class="programlisting prettyprint lang-console">POST /_aliases
+{
+    "actions" : [
+        {
+            "add" : {
+                 "index" : "test",
+                 "alias" : "alias2",
+                 "search_routing" : "1,2",
+                 "index_routing" : "2"
+            }
+        }
+    ]
+}</pre>
+</div>
+<div class="console_widget" data-snippet="snippets/583.console"></div>
+<p>As shown in the example above, search routing may contain several values
+separated by comma. Index routing can contain only a single value.</p>
+<p>If a search operation that uses routing alias also has a routing parameter, an
+intersection of both search alias routing and routing specified in the
+parameter is used. For example the following command will use "2" as a
+routing value:</p>
+<div class="pre_wrapper lang-console">
+<pre class="programlisting prettyprint lang-console">GET /alias2/_search?q=user:kimchy&amp;routing=2,3</pre>
+</div>
+<div class="console_widget" data-snippet="snippets/584.console"></div>
+<h3><a id="alias-adding"></a>Add a single alias<a class="edit_me edit_me_private" rel="nofollow" title="Editing on GitHub is available to Elastic" href="https://github.com/elastic/elasticsearch/edit/6.0/docs/reference/indices/aliases.asciidoc">edit</a></h3>
+<p>An alias can also be added with the endpoint</p>
+<p><code class="literal">PUT /{index}/_alias/{name}</code></p>
+<p>where</p>
+<div class="informaltable">
+<table border="0" cellpadding="4px">
+<colgroup>
+<col/>
+<col/>
+</colgroup>
+<tbody valign="top">
+<tr>
+<td valign="top">
+<p>
+<code class="literal">index</code>
+</p>
+</td>
+<td valign="top">
+<p>
+The index the alias refers to. Can be any of <code class="literal">* | _all | glob pattern | name1, name2, …</code>
+</p>
+</td>
+</tr>
+<tr>
+<td valign="top">
+<p>
+<code class="literal">name</code>
+</p>
+</td>
+<td valign="top">
+<p>
+The name of the alias. This is a required option.
+</p>
+</td>
+</tr>
+<tr>
+<td valign="top">
+<p>
+<code class="literal">routing</code>
+</p>
+</td>
+<td valign="top">
+<p>
+An optional routing that can be associated with an alias.
+</p>
+</td>
+</tr>
+<tr>
+<td valign="top">
+<p>
+<code class="literal">filter</code>
+</p>
+</td>
+<td valign="top">
+<p>
+An optional filter that can be associated with an alias.
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>You can also use the plural <code class="literal">_aliases</code>.</p>
+<h4><a id="_examples_2"></a>Examples:<a class="edit_me edit_me_private" rel="nofollow" title="Editing on GitHub is available to Elastic" href="https://github.com/elastic/elasticsearch/edit/6.0/docs/reference/indices/aliases.asciidoc">edit</a></h4>
+<div class="variablelist">
+<dl class="variablelist">
+<dt>
+<span class="term">
+Adding time based alias
+</span>
+</dt>
+<dd>
+<div class="pre_wrapper lang-console">
+<pre class="programlisting prettyprint lang-console">PUT /logs_201305/_alias/2013</pre>
+</div>
+<div class="console_widget" data-snippet="snippets/585.console"></div>
+</dd>
+<dt>
+<span class="term">
+Adding a user alias
+</span>
+</dt>
+<dd>
+<p>First create the index and add a mapping for the <code class="literal">user_id</code> field:</p>
+<div class="pre_wrapper lang-console">
+<pre class="programlisting prettyprint lang-console">PUT /users
+{
+    "mappings" : {
+        "user" : {
+            "properties" : {
+                "user_id" : {"type" : "integer"}
+            }
+        }
+    }
+}</pre>
+</div>
+<div class="console_widget" data-snippet="snippets/586.console"></div>
+<p>Then add the alias for a specific user:</p>
+<div class="pre_wrapper lang-console">
+<pre class="programlisting prettyprint lang-console">PUT /users/_alias/user_12
+{
+    "routing" : "12",
+    "filter" : {
+        "term" : {
+            "user_id" : 12
+        }
+    }
+}</pre>
+</div>
+<div class="console_widget" data-snippet="snippets/587.console"></div>
+</dd>
+</dl>
+</div>
+<h3><a id="alias-index-creation"></a>Aliases during index creation<a class="edit_me edit_me_private" rel="nofollow" title="Editing on GitHub is available to Elastic" href="https://github.com/elastic/elasticsearch/edit/6.0/docs/reference/indices/aliases.asciidoc">edit</a></h3>
+<p>Aliases can also be specified during <a class="xref" href="indices-create-index.html#create-index-aliases" title="Aliases">index creation</a>:</p>
+<div class="pre_wrapper lang-console">
+<pre class="programlisting prettyprint lang-console">PUT /logs_20162801
+{
+    "mappings" : {
+        "type" : {
+            "properties" : {
+                "year" : {"type" : "integer"}
+            }
+        }
+    },
+    "aliases" : {
+        "current_day" : {},
+        "2016" : {
+            "filter" : {
+                "term" : {"year" : 2016 }
+            }
+        }
+    }
+}</pre>
+</div>
+<div class="console_widget" data-snippet="snippets/588.console"></div>
+<h3><a id="deleting"></a>Delete aliases<a class="edit_me edit_me_private" rel="nofollow" title="Editing on GitHub is available to Elastic" href="https://github.com/elastic/elasticsearch/edit/6.0/docs/reference/indices/aliases.asciidoc">edit</a></h3>
+<p>The rest endpoint is: <code class="literal">/{index}/_alias/{name}</code></p>
+<p>where</p>
+<div class="informaltable">
+<table border="0" cellpadding="4px">
+<colgroup>
+<col/>
+<col/>
+</colgroup>
+<tbody valign="top">
+<tr>
+<td valign="top">
+<p>
+<code class="literal">index</code>
+</p>
+</td>
+<td valign="top">
+<p>
+<code class="literal">* | _all | glob pattern | name1, name2, …</code>
+</p>
+</td>
+</tr>
+<tr>
+<td valign="top">
+<p>
+<code class="literal">name</code>
+</p>
+</td>
+<td valign="top">
+<p>
+<code class="literal">* | _all | glob pattern | name1, name2, …</code>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Alternatively you can use the plural <code class="literal">_aliases</code>. Example:</p>
+<div class="pre_wrapper lang-console">
+<pre class="programlisting prettyprint lang-console">DELETE /logs_20162801/_alias/current_day</pre>
+</div>
+<div class="console_widget" data-snippet="snippets/589.console"></div>
+<h3><a id="alias-retrieving"></a>Retrieving existing aliases<a class="edit_me edit_me_private" rel="nofollow" title="Editing on GitHub is available to Elastic" href="https://github.com/elastic/elasticsearch/edit/6.0/docs/reference/indices/aliases.asciidoc">edit</a></h3>
+<p>The get index alias API allows to filter by
+alias name and index name. This api redirects to the master and fetches
+the requested index aliases, if available. This api only serialises the
+found index aliases.</p>
+<p>Possible options:</p>
+<div class="informaltable">
+<table border="0" cellpadding="4px">
+<colgroup>
+<col/>
+<col/>
+</colgroup>
+<tbody valign="top">
+<tr>
+<td valign="top">
+<p>
+<code class="literal">index</code>
+</p>
+</td>
+<td valign="top">
+<p>
+The index name to get aliases for. Partial names are
+supported via wildcards, also multiple index names can be specified
+separated with a comma. Also the alias name for an index can be used.
+</p>
+</td>
+</tr>
+<tr>
+<td valign="top">
+<p>
+<code class="literal">alias</code>
+</p>
+</td>
+<td valign="top">
+<p>
+The name of alias to return in the response. Like the index
+option, this option supports wildcards and the option the specify
+multiple alias names separated by a comma.
+</p>
+</td>
+</tr>
+<tr>
+<td valign="top">
+<p>
+<code class="literal">ignore_unavailable</code>
+</p>
+</td>
+<td valign="top">
+<p>
+What to do if an specified index name doesn&#8217;t
+exist. If set to <code class="literal">true</code> then those indices are ignored.
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The rest endpoint is: <code class="literal">/{index}/_alias/{alias}</code>.</p>
+<h4><a id="_examples_3"></a>Examples:<a class="edit_me edit_me_private" rel="nofollow" title="Editing on GitHub is available to Elastic" href="https://github.com/elastic/elasticsearch/edit/6.0/docs/reference/indices/aliases.asciidoc">edit</a></h4>
+<p>All aliases for the index users:</p>
+<div class="pre_wrapper lang-console">
+<pre class="programlisting prettyprint lang-console">GET /logs_20162801/_alias/*</pre>
+</div>
+<div class="console_widget" data-snippet="snippets/590.console"></div>
+<p>Response:</p>
+<div class="pre_wrapper lang-js">
+<pre class="programlisting prettyprint lang-js">{
+ "logs_20162801" : {
+   "aliases" : {
+     "2016" : {
+       "filter" : {
+         "term" : {
+           "year" : 2016
+         }
+       }
+     }
+   }
+ }
+}</pre>
+</div>
+<p>All aliases with the name 2016 in any index:</p>
+<div class="pre_wrapper lang-console">
+<pre class="programlisting prettyprint lang-console">GET /_alias/2016</pre>
+</div>
+<div class="console_widget" data-snippet="snippets/591.console"></div>
+<p>Response:</p>
+<div class="pre_wrapper lang-js">
+<pre class="programlisting prettyprint lang-js">{
+  "logs_20162801" : {
+    "aliases" : {
+      "2016" : {
+        "filter" : {
+          "term" : {
+            "year" : 2016
+          }
+        }
+      }
+    }
+  }
+}</pre>
+</div>
+<p>All aliases that start with 20 in any index:</p>
+<div class="pre_wrapper lang-console">
+<pre class="programlisting prettyprint lang-console">GET /_alias/20*</pre>
+</div>
+<div class="console_widget" data-snippet="snippets/592.console"></div>
+<p>Response:</p>
+<div class="pre_wrapper lang-js">
+<pre class="programlisting prettyprint lang-js">{
+  "logs_20162801" : {
+    "aliases" : {
+      "2016" : {
+        "filter" : {
+          "term" : {
+            "year" : 2016
+          }
+        }
+      }
+    }
+  }
+}</pre>
+</div>
+<p>There is also a HEAD variant of the get indices aliases api to check if
+index aliases exist. The indices aliases exists api supports the same
+option as the get indices aliases api. Examples:</p>
+<div class="pre_wrapper lang-console">
+<pre class="programlisting prettyprint lang-console">HEAD /_alias/2016
+HEAD /_alias/20*
+HEAD /logs_20162801/_alias/*</pre>
+</div>
+<div class="console_widget" data-snippet="snippets/593.console"></div>
+</div>
+<div class="navfooter">
+<span class="prev">
+<a href="indices-types-exists.html">« Types Exists</a>
+</span>
+<span class="next">
+<a href="indices-update-settings.html">Update Indices Settings »</a>
+</span>
+</div>
+</div>
+
+                  <!-- end body -->
+                </div>
+                <div class="col-xs-12 col-sm-4 col-md-4" id="right_col">
+                  <div id="rtpcontainer" style="display: block;">
+                    <div class="mktg-promo">
+                      <h3>Most Popular</h3>
+                      <ul class="icons">
+                        <li class="icon-elasticsearch-white"><a href="https://www.elastic.co/webinars/getting-started-elasticsearch?baymax=default&elektra=docs&storm=top-video">Get Started with Elasticsearch: Video</a></li>
+                        <li class="icon-kibana-white"><a href="https://www.elastic.co/webinars/getting-started-kibana?baymax=default&elektra=docs&storm=top-video">Intro to Kibana: Video</a></li>
+                        <li class="icon-logstash-white"><a href="https://www.elastic.co/webinars/introduction-elk-stack?baymax=default&elektra=docs&storm=top-video">ELK for Logs & Metrics: Video</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+        </div>
+
+
+<div id='elastic-footer'></div>
+<script src='https://www.elastic.co/elastic-footer.js'></script>
+<!-- Footer Section end-->
+
+      </section>
+    </div>
+
+<script src="/guide/static/jquery.js"></script>
+<script type="text/javascript" src="/guide/static/docs.js"></script>
+<script type="text/javascript">
+  window.initial_state = {}</script>
+  </body>
+</html>
